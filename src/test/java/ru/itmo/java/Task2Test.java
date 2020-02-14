@@ -3,9 +3,12 @@ package ru.itmo.java;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
-@SuppressWarnings({"UnnecessaryBoxing", "deprecation", "CachedNumberConstructorCall"})
+@SuppressWarnings({"UnnecessaryBoxing", "deprecation", "CachedNumberConstructorCall", "RedundantCast"})
 public class Task2Test {
 
     @Test
@@ -42,10 +45,31 @@ public class Task2Test {
 
         Random random = new Random();
 
-        for (int i = 0; i < 100_000; i++) {
+        for (int i = 0; i < 1_000_000; i++) {
             var a = random.nextInt(20);
             var b = random.nextInt(20);
             Assert.assertEquals(a == b, inst.testIfIntsEqual(new Integer(a), new Integer(b)));
+        }
+    }
+
+    @Test
+    public void test_anyIsDigit() {
+        Task2 inst = new Task2();
+
+        Random random = new Random();
+
+        for (int i = 0; i < 100_000; i++) {
+            var a = (char) random.nextInt(13);
+            var b = (char) random.nextInt(37);
+            var c = (char) random.nextInt(58);
+
+            boolean presented = c < 58 & c > 47;
+            List<Character> integers = (List<Character>) Arrays.asList(a, b, c);
+
+            if (presented) {
+                Collections.shuffle(integers);
+            }
+            Assert.assertEquals(presented, inst.atLeastOneIsDigit(integers.get(0), integers.get(1), integers.get(2)));
         }
     }
 

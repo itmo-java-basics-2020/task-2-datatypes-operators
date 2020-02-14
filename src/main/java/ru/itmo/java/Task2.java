@@ -1,13 +1,17 @@
 package ru.itmo.java;
 
+import org.w3c.dom.ls.LSOutput;
+
+import java.util.Arrays;
+
 public class Task2 {
 
     /**
      * Дано произвольное вещественное число. Выведите его дробную часть
-     *
+     * <p>
      * Например
-     *  - дано 17.9
-     *  - вывод 0.9
+     * - дано 17.9
+     * - вывод 0.9
      */
     double getFractionalPart(double realNumber) {
         return 0.0; // put your code here
@@ -31,12 +35,19 @@ public class Task2 {
      * Дано целое число. Выведите {@code true}, если оно входит в заданный диапазон или {@code false}
      * в иных случаях
      *
-     * @param number заданное число
-     * @param leftBound правая граница диапазона
-     * @param rightBound верхняя граница диапазона
+     * @param number      заданное число
+     * @param leftBound   правая граница диапазона
+     * @param rightBound  верхняя граница диапазона
      * @param inclusively входят ли границы в заданный даипазон
      */
     boolean numberInRange(Integer number, Integer leftBound, Integer rightBound, Boolean inclusively) {
+        return false;
+    }
+
+    /**
+     * Даны 3 символа. Определите является ли хотя бы один из них цифрой 1..9
+     */
+    boolean atLeastOneIsDigit(char c1, char c2, char c3) {
         return false;
     }
 
