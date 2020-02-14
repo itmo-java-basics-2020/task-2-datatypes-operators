@@ -26,4 +26,18 @@ public class Task2 {
     boolean testIfIntsEqual(Integer a, Integer b) {
         return false;
     }
+
+    /**
+     * Дано целое число. Выведите {@code true}, если оно входит в заданный диапазон или {@code false}
+     * в иных случаях
+     *
+     * @param number заданное число
+     * @param leftBound правая граница диапазона
+     * @param rightBound верхняя граница диапазона
+     * @param inclusively входят ли границы в заданный даипазон
+     */
+    boolean numberInRange(Integer number, Integer leftBound, Integer rightBound, Boolean inclusively) {
+        return false;
+    }
+
 }

@@ -14,6 +14,14 @@ public class Task2Test {
 
         Assert.assertEquals(0.9, inst.getFractionalPart(17.9), 1e-9);
         Assert.assertEquals(0.9999, inst.getFractionalPart(17.9999), 1e-9);
+
+        Random random = new Random();
+
+        for (int i = 0; i < 1_000_000; i++) {
+            double number = random.nextDouble();
+            double forCheck = inst.getFractionalPart(random.nextInt(100_000) + number);
+            Assert.assertEquals(number, forCheck, 1e-11);
+        }
     }
 
     @Test
@@ -23,7 +31,7 @@ public class Task2Test {
         Random random = new Random();
 
         for (int i = 0; i < 100_000; i++) {
-            char code = (char) random.nextInt(Character.MAX_VALUE) ;
+            char code = (char) random.nextInt(Character.MAX_VALUE);
             Assert.assertEquals(code, inst.charCode(code));
         }
     }
@@ -40,4 +48,27 @@ public class Task2Test {
             Assert.assertEquals(a == b, inst.testIfIntsEqual(new Integer(a), new Integer(b)));
         }
     }
+
+    @Test
+    public void test_digitInRange() {
+        Task2 inst = new Task2();
+
+        Random random = new Random();
+
+        // 1
+        Assert.assertFalse(inst.numberInRange(null, 0, 0, true));
+        Assert.assertFalse(inst.numberInRange(null, 0, null, true));
+        Assert.assertFalse(inst.numberInRange(0, 0, 0, null));
+        Assert.assertFalse(inst.numberInRange(0, null, 0, true));
+        Assert.assertFalse(inst.numberInRange(0, 0, null, true));
+
+        // 2
+        Assert.assertFalse(inst.numberInRange(72344656, 72347655, 72344656, true));
+        Assert.assertFalse(inst.numberInRange(13, 13, 13, false));
+        Assert.assertTrue(inst.numberInRange(13, 13, 13, true));
+        Assert.assertTrue(inst.numberInRange(11, 10, 100_000_000, true));
+        Assert.assertFalse(inst.numberInRange(10, 10, 100_000_000, false));
+
+    }
+
 }
