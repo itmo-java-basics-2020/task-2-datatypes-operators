@@ -1,9 +1,6 @@
 package ru.itmo.java;
 
-import org.w3c.dom.ls.LSOutput;
-
-import java.util.Arrays;
-
+@SuppressWarnings("all")
 public class Task2 {
 
     /**
@@ -48,6 +45,13 @@ public class Task2 {
      * Даны 3 символа. Определите является ли хотя бы один из них цифрой 1..9
      */
     boolean atLeastOneIsDigit(char c1, char c2, char c3) {
+        return false;
+    }
+
+    /**
+     * Даны два вещественных числа. Определите равны ли они
+     */
+    boolean areRealNumbersEqual(double a, double b) {
         return false;
     }
 

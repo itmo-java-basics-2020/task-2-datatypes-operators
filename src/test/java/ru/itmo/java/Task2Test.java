@@ -95,4 +95,12 @@ public class Task2Test {
 
     }
 
+    @Test
+    public void test_areRealNumbersEqual() {
+        Task2 inst = new Task2();
+
+        Assert.assertTrue(inst.areRealNumbersEqual(3.0, 3.0));
+        Assert.assertTrue(inst.areRealNumbersEqual(0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1, 1.0));
+        Assert.assertTrue(inst.areRealNumbersEqual(3.3 / 3, 1.1));
+    }
 }
