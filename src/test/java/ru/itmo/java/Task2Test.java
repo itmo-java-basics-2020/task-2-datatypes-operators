@@ -77,8 +77,6 @@ public class Task2Test {
     public void test_digitInRange() {
         Task2 inst = new Task2();
 
-        Random random = new Random();
-
         // 1
         Assert.assertFalse(inst.numberInRange(null, 0, 0, true));
         Assert.assertFalse(inst.numberInRange(null, 0, null, true));
@@ -102,5 +100,42 @@ public class Task2Test {
         Assert.assertTrue(inst.areRealNumbersEqual(3.0, 3.0));
         Assert.assertTrue(inst.areRealNumbersEqual(0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1, 1.0));
         Assert.assertTrue(inst.areRealNumbersEqual(3.3 / 3, 1.1));
+    }
+
+    @Test
+    public void test_sumOfDigits() {
+        Task2 inst = new Task2();
+
+        Assert.assertEquals(2, inst.sumOfDigits(101));
+        Assert.assertEquals(13, inst.sumOfDigits(256));
+        Assert.assertEquals(1, inst.sumOfDigits(100));
+        Assert.assertEquals(5, inst.sumOfDigits(230));
+    }
+
+    @Test
+    public void test_nextEvenNumber() {
+        Task2 inst = new Task2();
+
+        Assert.assertEquals(12, inst.nextEvenNumber(10));
+        Assert.assertEquals(6, inst.nextEvenNumber(4));
+
+    }
+
+    @Test
+    public void test_schoolDesks() {
+        Task2 inst = new Task2();
+
+        Assert.assertEquals(16, inst.schoolDesks(5, 10, 15));
+        Assert.assertEquals(12, inst.schoolDesks(7, 7, 7));
+        Assert.assertEquals(15, inst.schoolDesks(12, 12, 6));
+
+    }
+
+    @Test
+    public void test_xorDigits() {
+        Task2 inst = new Task2();
+
+        Assert.assertEquals(12, inst.xorDigits(148));
+        Assert.assertEquals(0, inst.xorDigits(155));
     }
 }
